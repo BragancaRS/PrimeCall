@@ -1,0 +1,59 @@
+/* Definição de estilos para toda a tabela*/
+
+.tabela {
+   
+    border: 2px solid #333333;
+    align-items: center;
+    text-align: center;
+    width: 1050px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+
+/* Definição de estilos para linha de cabeçalho da tabela*/
+
+.cabecalho {
+
+    text-align: center;
+
+    font: 16px Arial, sans-serif;
+
+    font-weight: bold;
+
+    color: Snow;
+
+    background:  #F55856;
+
+}
+
+
+
+/* Definição de estilos para coluna */
+
+.primeiro {
+
+    text-align: center;
+
+    font: 14px Arial, sans-serif;
+    
+}
+
+
+
+/* Definição de estilos para coluna */
+
+.ultimo {
+
+    font: 11px Arial, sans-serif;
+    font-weight: bold;
+
+    text-align: center;
+
+    background: #F5F5F5;
+
+}
+

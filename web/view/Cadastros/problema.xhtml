@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Serviço</title>
+    </h:head>
+
+    <ui:define name="content">
+        <h:body>
+            <h:outputStylesheet library="css" name="formulario.css"/>
+            <h:outputStylesheet library="css" name="mensagem.css"/>
+
+            <br></br><br></br><br></br><br></br><br></br>
+
+            <h:form class="formoid-solid-blue" 
+                    style="background-color:#FFFFFF;
+                    font-size:14px;
+                    font-family:'Roboto',Arial,Helvetica,sans-serif;
+                    color:#2C648C;
+                    max-width:480px;
+                    min-width:150px">
+                <div class="title"><h2>Serviço Predefinido</h2></div>
+
+                <div class="element-input">
+                    <label class="title">* Insira a descrição</label>
+                    <h:inputText value="#{problemaBean.novoProblema.descricao}" size="46" pt:placeholder="Serviço"  required="true"/>
+                </div>
+
+                <div class="submit">                     
+                    <h:commandButton value="Cadastrar" action="#{problemaBean.inserir()}"/>
+                </div>
+            </h:form>
+            
+            <br></br><br></br>
+            <h:messages id="inserido" styleClass="inserido"/>
+        </h:body>
+    </ui:define>
+</ui:composition>

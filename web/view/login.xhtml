@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <meta charset="UTF-8"/>
+        <title>:: Prime Call ::</title>
+        <link rel="shortcut icon" href="./images/icon.png" />
+       <h:outputStylesheet library="css" name="style.css"/>
+
+    </h:head>
+
+    <body>
+
+        <div class="wrapper">
+            <div class="container">
+                <h1>PrimeCall</h1>
+
+                <form class="form">
+                    <h:form>
+                        <h:inputText  value="#{funcionarioBean.usuario.login}" pt:placeholder="Usuário" styleClass="login__input"/>
+                        <h:inputSecret value="#{funcionarioBean.usuario.senha}" pt:placeholder="Senha" styleClass="login__input"/>
+                        <h:commandButton styleClass="form" value="Entrar" action="#{funcionarioBean.autenticar}"/>
+                        <h:commandLink value="Cliente cadastre-se aqui" action="/view/cliente/cadastro/clienteauto.xhtml"></h:commandLink>
+                        
+                    </h:form>
+                </form>
+            </div>
+
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <h:outputScript library="js" name="index.js"/>
+    </body>
+</html>

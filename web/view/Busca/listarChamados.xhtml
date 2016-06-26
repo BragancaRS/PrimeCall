@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="content"> 
+        <h:outputStylesheet library="css" name="tabelas.css"/>
+        <h:outputStylesheet library="css" name="formulario.css"/>
+
+        <br></br><br></br><br></br><br></br>
+
+        <h:form class="formoid-solid-blue" 
+                style="background-color:#FFFFFF;
+                font-size:12px;
+                font-family:'Roboto',Arial,Helvetica,sans-serif;
+                color:#2C648C;
+                max-width:80%;
+                min-width:150px">
+            <div class="title" ><h2>Chamados</h2></div>
+
+            <h:dataTable value="#{chamadoBean.buscarTodos}" var="c" styleClass="tabela"   headerClass="cabecalho" columnClasses="ultimo,primeiro">
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Número"/>
+                    </f:facet>
+                    <h:outputLabel value="#{c.id}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Descrição"/>
+                    </f:facet>
+                    <h:outputLabel value="#{c.descricao}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Abertura"/>
+                    </f:facet>
+                    <h:outputLabel value="#{c.idFuncionarioAbertura}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Atendimento"/>
+                    </f:facet>
+                    <h:outputLabel value="#{c.idFuncionarioAtendimento}"/>
+
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Cliente"/>
+                    </f:facet>
+                    <h:outputLabel value="#{c.idPessoa}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Problema"/>
+                    </f:facet>
+                    <h:outputLabel value="#{c.idProblema}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Dt Abert."/>
+                    </f:facet>
+                    <h:outputLabel value="#{c.dataAbertura}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Dt Fecham"/>
+                    </f:facet>
+                    <h:outputLabel value="#{c.dataFechamento}"/>
+                </h:column>
+
+            </h:dataTable>
+
+            <div class="submit">
+                <h:inputText value="" pt:placeholder="Nº do Chamado" size="10"/>
+                <h:commandButton value="Atender" action="#{chamadoBean.inserir()}" style="margin-left: 10px;"/>
+            </div>
+            
+        </h:form>
+    </ui:define>
+
+</ui:composition>

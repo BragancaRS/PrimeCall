@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Novo Chamado</title> 
+
+    </h:head>
+
+    <ui:define name="content">
+        <h:body>
+            <h:outputStylesheet library="css" name="formulario.css"/>
+            <h:outputStylesheet library="css" name="mensagem.css"/>
+
+            <br></br><br></br><br></br><br></br><br></br><br></br>
+
+            <h:form class="formoid-solid-blue" 
+                    style="background-color:#FFFFFF;
+                    font-size:14px;
+                    font-family:'Roboto',Arial,Helvetica,sans-serif;
+                    color:#2C648C;
+                    max-width:80%;
+                    min-width:150px">
+                <div class="title" ><h2>Abrir Chamado</h2></div>
+
+                <div class="element-input">
+                    <label class="title">* Preencha todos os campos abaixo</label>
+                    <div class="element-input">
+                        <h:selectOneMenu value="#{chamadoBean.novoChamado.idPessoa}" style="width: 290px">
+                            <f:selectItems value="#{clienteBean.buscarTodos}" />
+                        </h:selectOneMenu> 
+                        <h:selectOneMenu value="#{chamadoBean.novoChamado.idFuncionarioAbertura}" style="width: 290px; margin-left: 20px;">
+                            <f:selectItems value="#{funcionarioBean.buscarTodos}" />
+                        </h:selectOneMenu> 
+                        <h:selectOneMenu value="#{chamadoBean.novoChamado.idProblema}" style="width: 224px; margin-left: 20px;">
+                            <f:selectItems value="#{problemaBean.buscarTodos}" />
+                        </h:selectOneMenu> 
+                    </div>  
+                </div>
+
+                <div class="element-input">
+                    <h:inputTextarea value="#{chamadoBean.novoChamado.descricao}" pt:placeholder="Descrição do Problema" required="true" rows="8" style="width: 845px;"/>
+                </div>
+
+                <div class="submit">
+
+                    <h:commandButton value="Abrir" action="#{chamadoBean.inserir()}"/>
+                </div>
+            </h:form>
+            <br></br><br></br>
+            <h:messages id="inserido" styleClass="inserido"/>
+        </h:body>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough" >
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+
+    <h:body>
+        <h:outputStylesheet library="css" name="formulario.css"/>
+        <script type="text/javascript" src="cadastroempresa_files/formoid1/jquery.min.js"></script>
+        <br></br><br></br><br></br><br></br><br></br><br></br>
+        <h:form class="formoid-solid-blue" 
+                style="background-color:#FFFFFF;
+                font-size:14px;
+                font-family:'Roboto',Arial,Helvetica,sans-serif;
+                color:#2C648C;
+                max-width:480px;
+                min-width:150px">
+            <div class="title"><h2>Dados do Cliente</h2></div>
+
+            <div class="element-input">
+                <label class="title">* Preencha todos os campos abaixo</label>
+                <h:inputText value="#{clienteBean.novoCliente.nome}" pt:placeholder="Nome" size="46" required="true"/>
+            </div>
+
+            <div class="element-input">
+                <h:inputText value="#{clienteBean.novoCliente.sobrenome}" pt:placeholder="Sobrenome" size="46" required="true"/>
+            </div>
+
+            <div class="element-input">
+                <h:inputText id="cpf" value="#{clienteBean.novoCliente.cpf}" pt:placeholder="CPF" required="true"/>
+            </div>
+
+            <div class="element-input">
+                <h:inputText value="#{clienteBean.novoCliente.telefone}" pt:placeholder="Telefone" required="true"/>
+            </div>
+
+            <div class="element-input">
+                <h:inputText value="#{clienteBean.novoCliente.login}" pt:placeholder="Login" required="true"/>
+            </div>
+
+            <div class="element-input">
+                <h:inputSecret value="#{clienteBean.novoCliente.senha}" pt:placeholder="Senha" required="true"/>
+            </div>
+
+            <div class="submit">
+                <h:commandButton value="Submeter" action="#{clienteBean.inserir()}"/>
+            </div>
+        </h:form>>
+    </h:body>
+
+
+</html>

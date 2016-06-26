@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+
+    <h:head>
+        <title>Empresa</title>   
+    </h:head>
+    <ui:define name="content">
+        <h:body>
+            <h:outputStylesheet library="css" name="formulario.css"/>
+            <script type="text/javascript" src="cadastroempresa_files/formoid1/jquery.min.js"></script>
+            <br></br><br></br><br></br><br></br><br></br><br></br>
+            <h:form class="formoid-solid-blue" 
+                    style="background-color:#FFFFFF;
+                    font-size:14px;
+                    font-family:'Roboto',Arial,Helvetica,sans-serif;
+                    color:#2C648C;
+                    max-width:480px;
+                    min-width:150px">
+                <div class="title"><h2>Dados da Empresa</h2></div>
+
+                <div class="element-input">
+                    <label class="title">* Preencha todos os campos abaixo</label>
+                    <h:inputText value="#{empresaBean.empresa.nome}" pt:placeholder="Nome Fantasia" size="46" required="true"/>
+                </div>
+
+                <div class="element-input">
+                    <h:inputText value="#{empresaBean.empresa.cnpj}" pt:placeholder="CNPJ" required="true"/>
+                </div>
+
+                <div class="element-input">
+                    <h:inputText value="#{empresaBean.empresa.responsavel}" pt:placeholder="Responsável" size="46" required="true"/>
+                </div>
+
+                <div class="submit">
+                    <h:commandButton value="OK" action="#{empresaBean.cadastrarEmpresa()}"/>
+                </div>
+
+            </h:form>
+        </h:body>
+    </ui:define>
+
+</ui:composition>
